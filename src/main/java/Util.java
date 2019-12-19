@@ -49,6 +49,7 @@ public class Util {
 
     /**
      * Return a string with the characters reversed
+     * TODO: I haven't tested this yet
      */
     static String reverseString(String str) {
         String reversed = "";
@@ -60,6 +61,11 @@ public class Util {
         return reversed;
     }
 
+    /**
+     * Return true if str is a palindrome
+     * i.e. reads the same backward as forward
+     * TODO: Implement
+     */
     public static boolean isPalindrome(String str) {
         return false;
     }
@@ -72,6 +78,9 @@ public class Util {
         return str;
     }
 
+    /**
+     * Return the average of a list of numbers
+     */
     public double average(List<Double> numbers) {
         double sum = numbers.stream().reduce(0d, Double::sum);
         return sum / numbers.size();
