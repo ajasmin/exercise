@@ -10,7 +10,14 @@ public class UtilTest {
      */
 
     @Test
-    void testEmailIsValid() {
+    void emailIsValid() {
         assertTrue(Util.isEmailValid("abc@example.com"));
+    }
+
+    // TODO: Make this test pass
+    @Test
+    void isPalindrome() {
+        assertTrue("isPalindrome should return true when passed a palindrome",
+                Util.isPalindrome("radar"));
     }
 }

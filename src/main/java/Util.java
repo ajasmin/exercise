@@ -1,12 +1,12 @@
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class Util {
     /**
      * Return true if passed a valid email address
      */
-    public static boolean isEmailValid(String email)
-    {
-        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+    public static boolean isEmailValid(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." +
                 "[a-zA-Z0-9_+&*-]+)*@" +
                 "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
                 "A-Z]{0,7}$";
@@ -21,9 +21,10 @@ public class Util {
      * Calculate distance between two points in latitude and longitude taking
      * into account height difference. If you are not interested in height
      * difference pass 0.0. Uses Haversine method as its base.
-     *
+     * <p>
      * lat1, lon1 Start point lat2, lon2 End point el1 Start altitude in meters
      * el2 End altitude in meters
+     *
      * @returns Distance in Meters
      */
     public static double distance(double lat1, double lat2, double lon1,
@@ -52,10 +53,27 @@ public class Util {
     static String reverseString(String str) {
         String reversed = "";
 
-        for (int i=str.length()-1; i>=0; i++) {
+        for (int i = str.length() - 1; i >= 0; i++) {
             reversed = reversed + str.charAt(i);
         }
 
         return reversed;
+    }
+
+    public static boolean isPalindrome(String str) {
+        return false;
+    }
+
+    public static String snake_case_to_camel_case(String str) {
+        while(str.contains("_")) {
+            str = str.replaceFirst("_[a-z]", String.valueOf(Character.toUpperCase(str.charAt(str.indexOf("_") + 1))));
+        }
+
+        return str;
+    }
+
+    public double average(List<Double> numbers) {
+        double sum = numbers.stream().reduce(0d, Double::sum);
+        return sum / numbers.size();
     }
 }
