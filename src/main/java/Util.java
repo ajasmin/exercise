@@ -81,7 +81,7 @@ public class Util {
     /**
      * Return the average of a list of numbers
      */
-    public double average(List<Double> numbers) {
+    public static double average(List<Double> numbers) {
         double sum = numbers.stream().reduce(0d, Double::sum);
         return sum / numbers.size();
     }
